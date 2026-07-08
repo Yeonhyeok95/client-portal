@@ -46,7 +46,7 @@ export default function Header() {
         >
           TSAPtest
         </Link>
-        <nav className="hidden md:flex gap-7">
+        <nav className="hidden lg:flex gap-7">
           {NAV_LINKS.map((link) => {
             const active =
               link.href === "/"
@@ -65,7 +65,7 @@ export default function Header() {
             );
           })}
         </nav>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button href="/contact" variant="pill" size="sm">
             Request an introduction
           </Button>
@@ -73,7 +73,7 @@ export default function Header() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
-          className="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+          className="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
         >
           <span className="w-5 h-[2px] bg-navy" />
           <span className="w-5 h-[2px] bg-navy" />
@@ -81,7 +81,7 @@ export default function Header() {
         </button>
 
         {open && (
-          <div className="md:hidden absolute top-[68px] left-0 right-0 bg-white rounded-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.07)] p-6 flex flex-col gap-5 z-10">
+          <div className="lg:hidden absolute top-[68px] left-0 right-0 bg-white rounded-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.07)] p-6 flex flex-col gap-5 z-10">
             {NAV_LINKS.map((link) => {
               const active =
                 link.href === "/"
