@@ -7,13 +7,20 @@ export const metadata: Metadata = {
   title: "Contact — TSAPtest Private Wealth",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { intent } = await searchParams;
+  const initialMessage = intent === "account" ? `Request for Account Creation.\nReason: ` : "";
+
   return (
     <div>
       <PageHero eyebrow="Contact" title="Request an introduction" />
 
       <div className="max-w-[1120px] mx-auto px-6 sm:px-10 pt-16 pb-[90px] grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-14 items-start">
-        <ContactForm />
+        <ContactForm initialMessage={initialMessage} />
 
         <div className="flex flex-col gap-5">
           <div className="bg-navy rounded-[10px] py-8 px-7 text-white">
@@ -33,12 +40,9 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="bg-offwhite rounded-[10px] py-8 px-7">
-            <h3 className="text-base font-bold text-navy">
-              Existing clients
-            </h3>
+            <h3 className="text-base font-bold text-navy">Existing clients</h3>
             <p className="mt-2.5 text-[13px] leading-[1.7] text-body">
-              Please use the client portal for account matters and secure
-              correspondence.
+              Please use the client portal for account matters and secure correspondence.
             </p>
             <Link
               href="/portal"

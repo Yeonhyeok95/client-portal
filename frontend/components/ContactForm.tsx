@@ -3,11 +3,15 @@
 import { useState } from "react";
 import Button from "./Button";
 
-export default function ContactForm() {
+export default function ContactForm({
+  initialMessage = "",
+}: {
+  initialMessage?: string;
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState(initialMessage);
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
 

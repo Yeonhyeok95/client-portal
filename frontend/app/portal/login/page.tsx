@@ -84,6 +84,19 @@ export default function PortalLoginPage() {
             <div className="text-center text-[13px] font-semibold text-blue cursor-pointer">
               Forgotten password
             </div>
+            <div className="mt-2 pt-5 border-t border-line text-center">
+              <div className="text-[13px] text-body mb-3">
+                Not yet a client?
+              </div>
+              <Button
+                href="/contact?intent=account"
+                variant="outline"
+                size="sm"
+                className="w-full justify-center"
+              >
+                Request an account
+              </Button>
+            </div>
           </div>
         </div>
         <div className="text-center mt-5.5 text-xs text-muted leading-[1.6]">
